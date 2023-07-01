@@ -1,0 +1,97 @@
+---
+import { ReactModule } from "../module";
+import { Baloon } from "../module/baloon";
+import { api } from "../service";
+
+const { data: comments } = await api.get("/comments");
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    if (data.getAll) {
+      const full_name = data.get("fullname");
+      const attendance = data.get("attendance");
+      const comments = data.get("comments");
+      api.post("/comments", {
+        data: {
+          Full_Name: full_name,
+          Attendance: attendance === "hadir",
+          Comment: comments,
+        },
+      });
+      data.delete;
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta
+      id="testViewport"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Astro</title>
+  </head>
+  <body
+    class="bg-gradient-to-tr from-purple-200 via-fuchsia-300 to-yellow-100 bg-fill h-screen w-full object-cover"
+  >
+    <audio controls autoplay>
+      <source src="lagu.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+    <header class="flex w-full justify-center">
+      <h1>Birth Day Invitation</h1>
+      <Baloon client:load />
+    </header>
+    <main class="px-10">
+      <section>
+        <ReactModule client:load />
+
+        <form method="POST" class="w-full">
+          <label>
+            Full Name:
+            <input class="my-4" type="text" name="fullname" required />
+          </label>
+          <br />
+
+          <label class="flex items-center my-4">
+            Coments:
+            <textarea
+              name="comments"
+              required
+              minlength="20"
+              class="w-[500px] mx-4"></textarea>
+          </label>
+          <label>
+            Kehadiran :
+            <select name="attendance" id="">
+              <option value="hadir">hadir</option>
+              <option value="tidak">tidak</option>
+            </select>
+          </label>
+          <button class="bg-blue-400 rounded-md mx-4 p-2">Submit</button>
+        </form>
+
+        {
+          comments?.data.map((data) => (
+            <ul>
+              <li class="bg-white p-1">{data?.attributes.Full_Name}</li>
+              <li>{data?.attributes.Attendance ? "Hadir" : "Tidak Hadir"}</li>
+              <li>{data?.attributes.Comment}</li>
+            </ul>
+          ))
+        }
+      </section>
+    </main>
+    <footer class="fixed bottom-4"></footer>
+  </body>
+</html>
