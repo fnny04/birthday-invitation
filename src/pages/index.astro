@@ -1,31 +1,31 @@
 ---
 import { ReactModule } from "../module";
-import { Baloon } from "../module/baloon";
-import { api } from "../service";
+import { Background } from "../module/background";
+// import { api } from "../service";
 
-const { data: comments } = await api.get("/comments");
-if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData();
-    if (data.getAll) {
-      const full_name = data.get("fullname");
-      const attendance = data.get("attendance");
-      const comments = data.get("comments");
-      api.post("/comments", {
-        data: {
-          Full_Name: full_name,
-          Attendance: attendance === "hadir",
-          Comment: comments,
-        },
-      });
-      data.delete;
-    }
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message);
-    }
-  }
-}
+// const { data: comments } = await api.get("/comments");
+// if (Astro.request.method === "POST") {
+//   try {
+//     const data = await Astro.request.formData();
+//     if (data.getAll) {
+//       const full_name = data.get("fullname");
+//       const attendance = data.get("attendance");
+//       const comments = data.get("comments");
+//       api.post("/comments", {
+//         data: {
+//           Full_Name: full_name,
+//           Attendance: attendance === "hadir",
+//           Comment: comments,
+//         },
+//       });
+//       data.delete;
+//     }
+//   } catch (error) {
+//     if (error instanceof Error) {
+//       console.error(error.message);
+//     }
+//   }
+// }
 ---
 
 <html lang="en">
@@ -42,15 +42,27 @@ if (Astro.request.method === "POST") {
     <title>Astro</title>
   </head>
   <body
-    class="bg-gradient-to-tr from-purple-200 via-fuchsia-300 to-yellow-100 bg-fill h-screen w-full object-cover"
+    class="bg-gradient-to-tr from-purple-200 via-fuchsia-300 to-yellow-100 bg-fill w-full object-cover"
   >
-    <audio controls autoplay>
+    <!-- <audio controls autoplay hidden>
       <source src="lagu.mp3" type="audio/mp3" />
       Your browser does not support the audio element.
-    </audio>
-    <header class="flex w-full justify-center">
-      <h1>Birth Day Invitation</h1>
-      <Baloon client:load />
+    </audio> -->
+
+    <header class="flex flex-col">
+      <Background client:load />
+      <div class="flex flex-col h-screen justify-center z-40">
+        <div
+          class="flex flex-col gap-4 w-full justify-center items-center px-24 py-4"
+        >
+          <img src="/aurora.png" width="200" alt="" />
+          <h1
+            class="text-[#FF1493] font-mono font-bold text-3xl w-full text-center border border-white bg-white"
+          >
+            Birth Day Invitation
+          </h1>
+        </div>
+      </div>
     </header>
     <main class="px-10">
       <section>
@@ -81,7 +93,7 @@ if (Astro.request.method === "POST") {
           <button class="bg-blue-400 rounded-md mx-4 p-2">Submit</button>
         </form>
 
-        {
+        <!-- {
           comments?.data.map((data) => (
             <ul>
               <li class="bg-white p-1">{data?.attributes.Full_Name}</li>
@@ -89,9 +101,9 @@ if (Astro.request.method === "POST") {
               <li>{data?.attributes.Comment}</li>
             </ul>
           ))
-        }
+        }  -->
       </section>
     </main>
-    <footer class="fixed bottom-4"></footer>
   </body>
+  <footer class="fixed bottom-4"></footer>
 </html>

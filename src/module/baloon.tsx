@@ -1,13 +1,11 @@
 import { motion } from "framer-motion";
 import { FC, ReactElement } from "react";
 
-export const Baloon: FC = (): ReactElement => {
+export const Baloon: FC<{ fill?: string }> = ({
+  fill = "#a2edff",
+}): ReactElement => {
   return (
     <motion.svg
-      style={{
-        y: 20,
-        x: 100,
-      }}
       animate={{
         y: [0, 40, 0],
       }}
@@ -18,18 +16,18 @@ export const Baloon: FC = (): ReactElement => {
         repeat: Infinity,
       }}
       exit={{
-        y: 100,
+        y: 20,
       }}
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
-      width="60"
+      width="80"
       height="400"
       viewBox="0 0 640.000000 1280.000000"
       preserveAspectRatio="xMidYMid meet"
     >
       <g
         transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
-        fill="#a2edff"
+        fill={fill}
         stroke="none"
       >
         <motion.path
