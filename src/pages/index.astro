@@ -1,32 +1,6 @@
 ---
 import { Background } from "../module/background";
-
 export const prerender = true;
-// import { api } from "../service";
-
-// const { data: comments } = await api.get("/comments");
-// if (Astro.request.method === "POST") {
-//   try {
-//     const data = await Astro.request.formData();
-//     if (data.getAll) {
-//       const full_name = data.get("fullname");
-//       const attendance = data.get("attendance");
-//       const comments = data.get("comments");
-//       api.post("/comments", {
-//         data: {
-//           Full_Name: full_name,
-//           Attendance: attendance === "hadir",
-//           Comment: comments,
-//         },
-//       });
-//       data.delete;
-//     }
-//   } catch (error) {
-//     if (error instanceof Error) {
-//       console.error(error.message);
-//     }
-//   }
-// }
 ---
 
 <html lang="en">
@@ -45,54 +19,9 @@ export const prerender = true;
   <body
     class="bg-gradient-to-tr from-purple-200 via-fuchsia-300 to-yellow-100 bg-fill w-full object-cover h-screen overflow-hidden"
   >
-    <!-- <audio controls autoplay hidden>
-      <source src="lagu.mp3" type="audio/mp3" />
-      Your browser does not support the audio element.
-    </audio> -->
-
     <header class="flex flex-col">
       <Background client:load />
-
       <main class="px-10 z-40">
-        <!-- <section>
-          <form method="POST" class="w-full">
-            <label>
-              Full Name:
-              <input class="my-4" type="text" name="fullname" required />
-            </label>
-            <br />
-
-            <label class="flex items-center my-4">
-              Coments:
-              <textarea
-                name="comments"
-                required
-                minlength="20"
-                class="w-[500px] mx-4"></textarea>
-            </label>
-            <label>
-              Kehadiran :
-              <select name="attendance" id="">
-                <option value="hadir">hadir</option>
-                <option value="tidak">tidak</option>
-              </select>
-            </label>
-            <button class="bg-blue-400 rounded-md mx-4 p-2">Submit</button>
-          </form>
-
-          <!-- {
-          comments?.data.map((data) => (
-            <ul>
-              <li class="bg-white p-1">{data?.attributes.Full_Name}</li>
-              <li>{data?.attributes.Attendance ? "Hadir" : "Tidak Hadir"}</li>
-              <li>{data?.attributes.Comment}</li>
-            </ul>
-          ))
-        } 
-  </body>
-</html>
--->
-        <!-- </section> -->
         <div
           class="flex flex-col gap-6 h-screen w-full justify-center z-40 px-24 py-4"
         >
@@ -101,33 +30,11 @@ export const prerender = true;
           >
             Birth Day Invitation
           </h1>
-          <img src="/aurora.png" width="200" alt="" />
-          <div
-            class="absolute bottom-6 left-6 bg-white w-[450px] py-2 rounded-md"
+          <a href="/party">
+            <button class="rounded-md bg-pink-700 w-full text-white p-2"
+              >Click me to open</button
+            ></a
           >
-            <div class="grid grid-cols-4 gap-2 px-4">
-              <div
-                class="flex justify-center items-center w-20 h-20 rounded-full bg-pink-100"
-              >
-                <img
-                  width="50"
-                  height="50"
-                  src="https://img.icons8.com/dusk/64/home--v1.png"
-                  alt="home--v1"
-                />
-              </div>
-              <div
-                class="flex justify-center items-center w-20 h-20 rounded-full bg-pink-100"
-              >
-                <img
-                  width="50"
-                  height="50"
-                  src="https://img.icons8.com/plasticine/100/calendar--v1.png"
-                  alt="calendar--v1"
-                />
-              </div>
-            </div>
-          </div>
         </div>
       </main>
     </header>
