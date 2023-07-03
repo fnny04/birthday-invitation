@@ -43,56 +43,44 @@ export const prerender = true;
     <title>Astro</title>
   </head>
   <body
-    class="bg-gradient-to-tr from-purple-200 via-fuchsia-300 to-yellow-100 bg-fill w-full object-cover"
+    class="bg-gradient-to-tr from-purple-200 via-fuchsia-300 to-yellow-100 bg-fill w-full object-cover h-screen overflow-hidden"
   >
-    <audio controls autoplay hidden>
+    <!-- <audio controls autoplay hidden>
       <source src="lagu.mp3" type="audio/mp3" />
       Your browser does not support the audio element.
-    </audio>
+    </audio> -->
 
     <header class="flex flex-col">
       <Background client:load />
-      <div class="flex flex-col h-screen justify-center z-40">
-        <div
-          class="flex flex-col gap-4 w-full justify-center items-center px-24 py-4"
-        >
-          <img src="/aurora.png" width="200" alt="" />
-          <h1
-            class="text-[#FF1493] font-mono font-bold text-3xl w-full text-center border border-white bg-white bg-opacity-50 cursor-pointer"
-          >
-            Birth Day Invitation
-          </h1>
-        </div>
-      </div>
-    </header>
-    <main class="px-10">
-      <section>
-        <form method="POST" class="w-full">
-          <label>
-            Full Name:
-            <input class="my-4" type="text" name="fullname" required />
-          </label>
-          <br />
 
-          <label class="flex items-center my-4">
-            Coments:
-            <textarea
-              name="comments"
-              required
-              minlength="20"
-              class="w-[500px] mx-4"></textarea>
-          </label>
-          <label>
-            Kehadiran :
-            <select name="attendance" id="">
-              <option value="hadir">hadir</option>
-              <option value="tidak">tidak</option>
-            </select>
-          </label>
-          <button class="bg-blue-400 rounded-md mx-4 p-2">Submit</button>
-        </form>
+      <main class="px-10 z-40">
+        <!-- <section>
+          <form method="POST" class="w-full">
+            <label>
+              Full Name:
+              <input class="my-4" type="text" name="fullname" required />
+            </label>
+            <br />
 
-        <!-- {
+            <label class="flex items-center my-4">
+              Coments:
+              <textarea
+                name="comments"
+                required
+                minlength="20"
+                class="w-[500px] mx-4"></textarea>
+            </label>
+            <label>
+              Kehadiran :
+              <select name="attendance" id="">
+                <option value="hadir">hadir</option>
+                <option value="tidak">tidak</option>
+              </select>
+            </label>
+            <button class="bg-blue-400 rounded-md mx-4 p-2">Submit</button>
+          </form>
+
+          <!-- {
           comments?.data.map((data) => (
             <ul>
               <li class="bg-white p-1">{data?.attributes.Full_Name}</li>
@@ -104,7 +92,20 @@ export const prerender = true;
   </body>
 </html>
 -->
-      </section>
-    </main></body
-  >
+        <!-- </section> -->
+        <div class="flex flex-col h-screen justify-center z-40">
+          <div
+            class="flex flex-col gap-4 w-full justify-center items-center px-24 py-4"
+          >
+            <h1
+              class="text-[#FF1493] font-mono font-bold text-3xl w-full text-center border border-white bg-white bg-opacity-50 cursor-pointer"
+            >
+              Birth Day Invitation
+            </h1>
+            <img src="/aurora.png" width="200" alt="" />
+          </div>
+        </div>
+      </main>
+    </header>
+  </body>
 </html>
