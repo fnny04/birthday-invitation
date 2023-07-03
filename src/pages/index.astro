@@ -1,6 +1,7 @@
 ---
-import { ReactModule } from "../module";
 import { Background } from "../module/background";
+
+export const prerender = true;
 // import { api } from "../service";
 
 // const { data: comments } = await api.get("/comments");
@@ -57,7 +58,7 @@ import { Background } from "../module/background";
         >
           <img src="/aurora.png" width="200" alt="" />
           <h1
-            class="text-[#FF1493] font-mono font-bold text-3xl w-full text-center border border-white bg-white"
+            class="text-[#FF1493] font-mono font-bold text-3xl w-full text-center border border-white bg-white bg-opacity-50 cursor-pointer"
           >
             Birth Day Invitation
           </h1>
@@ -66,8 +67,6 @@ import { Background } from "../module/background";
     </header>
     <main class="px-10">
       <section>
-        <ReactModule client:load />
-
         <form method="POST" class="w-full">
           <label>
             Full Name:
@@ -101,9 +100,11 @@ import { Background } from "../module/background";
               <li>{data?.attributes.Comment}</li>
             </ul>
           ))
-        }  -->
-      </section>
-    </main>
+        } 
   </body>
-  <footer class="fixed bottom-4"></footer>
+</html>
+-->
+      </section>
+    </main></body
+  >
 </html>
