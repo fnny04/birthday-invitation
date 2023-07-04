@@ -45,7 +45,7 @@ export const prerender = true;
   <body
     class="bg-gradient-to-tr from-purple-200 via-fuchsia-300 to-yellow-100 bg-fill w-full object-cover h-full"
   >
-    <audio controls autoplay>
+    <audio controls autoplay hidden>
       <source src="lagu.mp3" type="audio/mp3" />
       Your browser does not support the audio element.
     </audio>
@@ -68,7 +68,6 @@ export const prerender = true;
             Di hari ulang tahun Ola yang ke 14 , Ola mau mengundang kalian untuk
             datang dan berkumpul di rumahku
           </p>
-          <Navbar />
         </section>
         <section
           id="alamat"
@@ -90,7 +89,6 @@ export const prerender = true;
               Jalan Jendral sudirman No.824 di Sebrang Panama Park
             </p>
           </div>
-          <Navbar />
         </section>
         <section
           id="jadwal"
@@ -124,9 +122,6 @@ export const prerender = true;
                 >
               </p>
             </div>
-          </div>
-          <div>
-            <Navbar />
           </div>
         </section>
         <section
@@ -163,9 +158,7 @@ export const prerender = true;
             <button class="bg-blue-400 rounded-md mx-4 p-2">Submit</button>
           </form>
           <div class="bg-white w-[350px] h-[300px] rounded-md"></div>
-          <div>
-            <Navbar />
-          </div>
+
           <!-- {
             comments?.data.map((data) => (
               <ul>
@@ -177,6 +170,9 @@ export const prerender = true;
           }  -->
         </section>
       </main>
+      <div>
+        <Navbar />
+      </div>
     </header>
   </body>
 </html>
