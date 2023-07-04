@@ -54,7 +54,7 @@ export const prerender = true;
       <main class="px-10 z-40">
         <section
           id="home"
-          class="flex flex-col gap-14 h-screen items-center justify-center"
+          class="flex flex-col gap-20 h-screen items-center justify-start pt-16"
         >
           <h1 class="text-pink-600 font-semibold text-center text-2xl">
             Hallo teman -teman , keluarga dan saudara saudara Ola tercintaaa
@@ -71,7 +71,7 @@ export const prerender = true;
         </section>
         <section
           id="alamat"
-          class="flex flex-col w-full h-screen items-center justify-between py-12 gap-4"
+          class="flex flex-col w-full h-screen items-center justify-center py-12 gap-4"
         >
           <div
             class="bg-pink-500 rounded-md bg-opacity-50 p-1 border border-white text-white w-full justify-center text-center text-2xl"
@@ -92,7 +92,7 @@ export const prerender = true;
         </section>
         <section
           id="jadwal"
-          class="flex flex-col w-full h-screen items-center justify-between py-12 gap-8"
+          class="flex flex-col w-full h-screen items-center justify-center py-12 gap-8"
         >
           <div
             class="bg-pink-500 rounded-md bg-opacity-50 p-1 border border-white text-white w-full justify-center text-center text-2xl"
@@ -171,7 +171,7 @@ export const prerender = true;
         </section>
       </main>
       <div>
-        <Navbar />
+        <Navbar client:load />
       </div>
     </header>
   </body>
