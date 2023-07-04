@@ -40,7 +40,7 @@ export const prerender = true;
       name="viewport"
       content="width=device-width, initial-scale=1"
     />
-    <title>Astro</title>
+    <title>Invitation</title>
   </head>
   <body
     class="bg-gradient-to-tr from-purple-200 via-fuchsia-300 to-yellow-100 bg-fill w-full object-cover h-full"
@@ -52,7 +52,7 @@ export const prerender = true;
 
     <header class="flex flex-col">
       <main class="px-10 z-40">
-        <section class="flex flex-col gap-4 pt-20">
+        <section id="home" class="flex flex-col gap-4 pt-20">
           <h1 class="text-pink-600 font-semibold text-center text-2xl">
             Hallo teman -teman , keluarga dan saudara saudara Ola tercintaaa
           </h1>
@@ -67,7 +67,8 @@ export const prerender = true;
           <Navbar />
         </section>
         <section
-          class="flex flex-col w-full h-full items-center justify-center pt-24 py-8 gap-6"
+          id="alamat"
+          class="flex flex-col w-full h-screen items-center justify-center pt-24 py-8 gap-6"
         >
           <div
             class="bg-pink-500 rounded-md bg-opacity-50 p-1 border border-white text-white w-full justify-center text-center text-2xl"
@@ -124,7 +125,8 @@ export const prerender = true;
 -->
         </section>
         <section
-          class="flex flex-col w-full h-[500px] items-center justify-center pt-24 py-8 gap-6"
+          id="jadwal"
+          class="flex flex-col w-full h-screen items-center justify-center pt-24 py-8 gap-6"
         >
           <div
             class="bg-pink-500 rounded-md bg-opacity-50 p-1 border border-white text-white w-full justify-center text-center text-2xl"
@@ -147,6 +149,7 @@ export const prerender = true;
           </p>
           <p>Sesi 1 untuk teman-teman : jam 13.00</p>
           <p>Sesi 2 untuk keluarga : jam 16.00</p>
+          <Navbar />
         </section>
       </main>
     </header>
