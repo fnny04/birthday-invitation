@@ -2,7 +2,7 @@ import { FC, ReactElement } from "react";
 
 export const Navbar: FC = (): ReactElement => {
   return (
-    <div className="fixed bottom-6 left-8 bg-white w-[350px] py-2 rounded-md">
+    <div className="fixed bottom-6 left-10 bg-white w-[350px] py-2 rounded-md">
       <div className="grid grid-cols-4 gap-2 px-4">
         <a href="#home">
           <div className="flex justify-center items-center w-20 h-20 rounded-full bg-pink-100">
