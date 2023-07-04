@@ -52,39 +52,45 @@ export const prerender = true;
 
     <header class="flex flex-col">
       <main class="px-10 z-40">
-        <section id="home" class="flex flex-col gap-4 pt-20">
+        <section
+          id="home"
+          class="flex flex-col gap-16 pt-20 h-screen items-center justify-center"
+        >
           <h1 class="text-pink-600 font-semibold text-center text-2xl">
             Hallo teman -teman , keluarga dan saudara saudara Ola tercintaaa
           </h1>
           <div class="flex w-full justify-center">
             <img src="/aurora.png" width="200" alt="" />
           </div>
-          <p class="text-white font-bold text-center text-lg">
-            Di hari ulang tahun aku yang ke 14 , Ola mau mengundang kalian untuk
-            datang dan berkumpul di
+          <p
+            class="text-white bg-pink-400 p-2 rounded-md border border-white font-bold text-center text-lg"
+          >
+            Di hari ulang tahun Ola yang ke 14 , Ola mau mengundang kalian untuk
+            datang dan berkumpul di rumahku
           </p>
 
           <Navbar />
         </section>
         <section
           id="alamat"
-          class="flex flex-col w-full h-screen items-center justify-center pt-24 py-8 gap-6"
+          class="flex flex-col w-full h-screen items-center justify-between pt-24 py-8 gap-6"
         >
           <div
             class="bg-pink-500 rounded-md bg-opacity-50 p-1 border border-white text-white w-full justify-center text-center text-2xl"
           >
             Alamat Rumahku
           </div>
-
-          <img
-            width="96"
-            height="96"
-            src="https://img.icons8.com/color/96/map-marker.png"
-            alt="map-marker"
-          />
-          <p class="font-bold text-center">
-            Jalan Jendral sudirman No.824 di Depan Panama Park
-          </p>
+          <div class="flex flex-col w-full justify-center items-center">
+            <img
+              width="200"
+              height="200"
+              src="https://img.icons8.com/color/96/map-marker.png"
+              alt="map-marker"
+            />
+            <p class="font-bold text-center">
+              Jalan Jendral sudirman No.824 di Sebrang Panama Park
+            </p>
+          </div>
           <Navbar />
           <!-- <form method="POST" class="w-full">
             <label>
@@ -126,30 +132,40 @@ export const prerender = true;
         </section>
         <section
           id="jadwal"
-          class="flex flex-col w-full h-screen items-center justify-center pt-24 py-8 gap-6"
+          class="flex flex-col w-full h-screen items-center justify-between pt-24 py-8 gap-12"
         >
           <div
             class="bg-pink-500 rounded-md bg-opacity-50 p-1 border border-white text-white w-full justify-center text-center text-2xl"
           >
             Janga Lupa Tanggal dan Harinya yaaa ...
           </div>
-          <div class="flex items-center">
-            <img
-              width="96"
-              height="96"
-              src="https://img.icons8.com/color/96/calendar-9.png"
-              alt="calendar-9"
-            />
-            <p class="font-bold text-blue-600">
-              Pada Hari Minggu ,Tanggal 9 Juli 2023
-            </p>
+          <div class="flex flex-col gap-8">
+            <div class="flex items-center">
+              <img
+                width="96"
+                height="96"
+                src="https://img.icons8.com/color/96/calendar-9.png"
+                alt="calendar-9"
+              />
+              <p class="font-bold text-blue-600">
+                Pada Hari Minggu ,Tanggal 9 Juli 2023
+              </p>
+            </div>
+            <div class="text-center font-semibold gap-2 text-pink-900">
+              <p>
+                Kita akan buat 2 sesi nihh... datang lebih cepat lebih baik ya
+                :)
+              </p>
+              <p>
+                Sesi 1 untuk teman-teman : jam 13.00<span
+                  ><p>Sesi 2 untuk keluarga : jam 16.00</p></span
+                >
+              </p>
+            </div>
           </div>
-          <p>
-            Kita akan buat 2 sesi nihh... datang lebih cepat lebih baik ya :)
-          </p>
-          <p>Sesi 1 untuk teman-teman : jam 13.00</p>
-          <p>Sesi 2 untuk keluarga : jam 16.00</p>
-          <Navbar />
+          <div>
+            <Navbar />
+          </div>
         </section>
       </main>
     </header>
