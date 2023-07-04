@@ -54,7 +54,7 @@ export const prerender = true;
       <main class="px-10 z-40">
         <section
           id="home"
-          class="flex flex-col gap-16 pt-20 h-screen items-center justify-center"
+          class="flex flex-col gap-16 h-screen items-center justify-center"
         >
           <h1 class="text-pink-600 font-semibold text-center text-2xl">
             Hallo teman -teman , keluarga dan saudara saudara Ola tercintaaa
@@ -92,43 +92,6 @@ export const prerender = true;
             </p>
           </div>
           <Navbar />
-          <!-- <form method="POST" class="w-full">
-            <label>
-              Full Name:
-              <input class="my-4" type="text" name="fullname" required />
-            </label>
-            <br />
-
-            <label class="flex items-center my-4">
-              Coments:
-              <textarea
-                name="comments"
-                required
-                minlength="20"
-                class="w-[500px] mx-4"></textarea>
-            </label>
-            <label>
-              Kehadiran :
-              <select name="attendance" id="">
-                <option value="hadir">hadir</option>
-                <option value="tidak">tidak</option>
-              </select>
-            </label>
-            <button class="bg-blue-400 rounded-md mx-4 p-2">Submit</button>
-          </form> -->
-
-          <!-- {
-          comments?.data.map((data) => (
-            <ul>
-              <li class="bg-white p-1">{data?.attributes.Full_Name}</li>
-              <li>{data?.attributes.Attendance ? "Hadir" : "Tidak Hadir"}</li>
-              <li>{data?.attributes.Comment}</li>
-            </ul>
-          ))
-        } 
-  </body>
-</html>
--->
         </section>
         <section
           id="jadwal"
@@ -166,6 +129,52 @@ export const prerender = true;
           <div>
             <Navbar />
           </div>
+        </section>
+        <section
+          class="flex flex-col h-screen w-full justify-between items-center py-8"
+        >
+          <div
+            class="bg-pink-500 rounded-md bg-opacity-50 p-1 border border-white text-white w-full justify-center text-center text-2xl"
+          >
+            Doa darimu sangat berharga bagiku ..
+          </div>
+          <form method="POST" class="w-full">
+            <label>
+              Full Name:
+              <input class="my-4" type="text" name="fullname" required />
+            </label>
+            <br />
+
+            <label class="flex items-center my-4">
+              Coments:
+              <textarea
+                name="comments"
+                required
+                minlength="20"
+                class="w-[500px] mx-4"></textarea>
+            </label>
+            <label>
+              Kehadiran :
+              <select name="attendance" id="">
+                <option value="hadir">hadir</option>
+                <option value="tidak">tidak</option>
+              </select>
+            </label>
+            <button class="bg-blue-400 rounded-md mx-4 p-2">Submit</button>
+          </form>
+          <div class="bg-white w-[350px] h-[400px] rounded-md"></div>
+          <div>
+            <Navbar />
+          </div>
+          <!-- {
+            comments?.data.map((data) => (
+              <ul>
+                <li class="bg-white p-1">{data?.attributes.Full_Name}</li>
+                <li>{data?.attributes.Attendance ? "Hadir" : "Tidak Hadir"}</li>
+                <li>{data?.attributes.Comment}</li>
+              </ul>
+            ))
+          }  -->
         </section>
       </main>
     </header>
