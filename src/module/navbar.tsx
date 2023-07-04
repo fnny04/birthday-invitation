@@ -35,15 +35,16 @@ export const Navbar: FC = (): ReactElement => {
             />
           </div>
         </a>
-
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-pink-100">
-          <img
-            width="50"
-            height="50"
-            src="https://img.icons8.com/bubbles/50/topic.png"
-            alt="topic"
-          />
-        </div>
+        <a href="#comments">
+          <div className="flex justify-center items-center w-20 h-20 rounded-full bg-pink-100">
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/bubbles/50/topic.png"
+              alt="topic"
+            />
+          </div>
+        </a>
       </div>
     </div>
   );
